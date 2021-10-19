@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="10%" align="center" src="ddd/ddd.ico">
+  <img width="20%" align="center" src="ddd/logo.ico">
 </p>
 <h1 align="center">
   D D D
@@ -25,7 +25,7 @@
     <img src="https://img.shields.io/badge/python-3.7+-blue.svg?color=FF0000&style=flat-square" alt="Python Version">
   </a>
   <a style="text-decoration:none" href="https://www.codefactor.io/repository/github/psyhackological/ddd">
-    <img src="https://img.shields.io/codefactor/grade/github/psyhackological/ddd/master?color=FFFFFF" alt="CodeFactor">
+    <img src="https://img.shields.io/codefactor/grade/github/Psyhackological/DDD/main?color=FFFFFF" alt="CodeFactor">
   </a>
   <a style="text-decoration:none" href="https://github.com/Psyhackological/DDD/releases">
     <img src="https://img.shields.io/github/downloads/psyhackological/ddd/total?color=000000&style=flat-square" alt="Downloads">
