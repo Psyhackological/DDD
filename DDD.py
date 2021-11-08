@@ -1,34 +1,32 @@
-from requests import get
-from bs4 import BeautifulSoup
-from json import loads
+import DDJ
+import requests
+import json
 
-start = int(input("Start downloading from Episode: "))
-end = int(input("End downloading from Episode (including this number): "))
 
-for i in range(start, end + 1, 1):
-    url = "https://darknetdiaries.com/episode/0/"
-    url = url.replace("0", str(i))
+def download_podcast():
+    try:
+        start = int(input("Start downloading from Episode: "))
+        end = int(input("End downloading to Episode (including this number): "))
+    except ValueError as e:
+        print(f"ValueError: Input needs to be int: {str(e)}")
+        exit()
 
-    page = get(url)
-    page_soup = BeautifulSoup(page.text, 'html.parser')
+    with open("DD.json") as f:
+        json_py_dict = json.load(f)
 
-    scripts = page_soup.findAll('script')
-    script = str(scripts[3])
-    script = script.replace("<script>", "", 1)
-    script = script.replace("window.playerConfiguration = ", "", 1)
-    script = script.replace("</script>", "", 1)
-    json_dict = loads(script)
+    print("\nDownloading started...")
+    for i in range(start, end + 1, 1):
+        link = json_py_dict[str(i)]["link"]
+        title = json_py_dict[str(i)]["title"]
 
-    link = json_dict["episode"]["media"]["mp3"]
+        print(title + ': ' + link)
 
-    title = json_dict["episode"]["title"]
-    title = title.replace(":", "")
+        episode = requests.get(link)
 
-    print(str(i) + ". " + title + ": " + link)
-
-    podcast = get(link)
-    download = True
-
-    if download:
         with open(title + ".mp3", 'wb') as local_file:
-            local_file.write(podcast.content)
+            local_file.write(episode.content)
+
+
+if __name__ == "__main__":
+    DDJ.check_file()
+    download_podcast()
