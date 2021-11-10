@@ -1,9 +1,9 @@
-<p style="text-align: center;">
-  <img width="20%" style="text-align: center;" src="ddd/logo.ico" alt="DDD logo">
+<p align="center">
+  <img width="20%" align="center" src="ddd/logo.ico" alt="DDD logo">
 </p>
-<h1 style="text-align: center;">D D D </h1>
+<h1 align="center">D D D </h1>
 
-<p style="text-align: center;">
+<p align="center">
     <strong style="font-size: 20px;">D</strong>arknet
     <strong style="font-size: 20px;">D</strong>iaries
     <strong style="font-size: 20px;">D</strong>ownloader
@@ -11,7 +11,7 @@
     The CLI Python module for bulk downloading the <a href="https://darknetdiaries.com/" target="_blank">Darknet Diaries</a> podcast to a hard disc.
 </p>
 
-<p style="text-align: center;">
+<p align="center">
   <a style="text-decoration:none" href="https://github.com/Psyhackological/DDD/releases">
     <img src="https://img.shields.io/github/v/release/Psyhackological/DDD?color=000000&style=flat-square" alt="Releases">
   </a>
