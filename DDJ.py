@@ -11,7 +11,7 @@ import json
 
 def create_json():
     json_py_dict = dict()
-    recent_episode_nr = 103
+    recent_episode_nr = 104
 
     with alive_bar(recent_episode_nr, title="Generating...", bar="filling", length=40, spinner="waves") as bar:
         for i in range(1, recent_episode_nr + 1, 1):
