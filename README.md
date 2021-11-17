@@ -55,7 +55,7 @@ You need 3 additional modules:
 - [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
 - [alive-progress](https://pypi.org/project/alive-progress/)
 
-They can be installed all at once by pasting this command into the terminal (at the DDD folder):
+They all can be installed at once by pasting this command into the terminal (at the DDD folder):
 ```terminal
 pip install -r requirements.txt
 ```
