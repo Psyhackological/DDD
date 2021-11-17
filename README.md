@@ -32,20 +32,30 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#features">Features</a></li>
     <li><a href="#installation">Installation</a></li>
+    <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
 
-##  Installation
-You need 3 additional modules:
-- requests
-- beautifulsoup4
-- alive-progress
+##  Features
+- Download desired files online and enjoy freedom to be offline.
+- Fast and easy to use.
+- JSON file can be used in other programming languages.
 
-They can be installed by pasting this line into the terminal (at the DDD-main folder):
+## Installation
+Pre-built binaries are available from the [releases](https://github.com/Psyhackological/DDD/releases/) page.
+
+##  Dependencies
+You need 3 additional modules:
+- [requests](https://pypi.org/project/requests/)
+- [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
+- [alive-progress](https://pypi.org/project/alive-progress/)
+
+They can be installed all at once by pasting this command into the terminal (at the DDD folder):
 ```terminal
 pip install -r requirements.txt
 ```
@@ -55,7 +65,7 @@ pip install --user -r requirements.txt
 ```
 
 ## Usage
-Type:
+Paste this command into the terminal (at the DDD folder):
 ```terminal
 python DDD.py
 ```
