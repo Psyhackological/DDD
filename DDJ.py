@@ -11,7 +11,7 @@ import json
 
 def create_json():
     json_py_dict = dict()
-    recent_episode_nr = 104
+    recent_episode_nr = 105
 
     with alive_bar(recent_episode_nr, title="Generating...", bar="filling", length=40, spinner="waves") as bar:
         for i in range(1, recent_episode_nr + 1, 1):
@@ -49,7 +49,7 @@ def check_file():
     if not exists("DD.json"):
         print("DD.json not found, creating a brand new file...")
         create_json()
-    elif getsize("DD.json") != 14660:
+    elif getsize("DD.json") != 14976:
         print("Corrupted DD.json found, creating a brand new file...")
         create_json()
     else:
