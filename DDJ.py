@@ -1,8 +1,22 @@
 import requests
 from bs4 import BeautifulSoup
-from os.path import exists, getsize
+from os.path import exists
 from alive_progress import alive_bar
 import json
+
+
+def get_recent_episode_nr():
+    page = requests.get("https://darknetdiaries.com/")
+    page_soup = BeautifulSoup(page.text, "html.parser")
+
+    sixth_a = page_soup.findAll('a')[5]
+    last_episode_title = sixth_a.text
+
+    nr_end = last_episode_title.find(':')
+    recent_episode_str = last_episode_title[3:nr_end]
+    recent_episode_nr = int(recent_episode_str)
+
+    return recent_episode_nr
 
 #  json_data - reading json data from extracted string (script)
 #  json_py_dict - empty python dictionary ready to be updated in each iteration
@@ -11,7 +25,7 @@ import json
 
 def create_json():
     json_py_dict = dict()
-    recent_episode_nr = 105
+    recent_episode_nr = get_recent_episode_nr()
 
     with alive_bar(recent_episode_nr, title="Generating...", bar="filling", length=40, spinner="waves") as bar:
         for i in range(1, recent_episode_nr + 1, 1):
@@ -45,13 +59,30 @@ def create_json():
     print("\nFile exported successfully.")
 
 
+def check_json():
+    recent_episode_nr = get_recent_episode_nr()
+
+    with open("DD.json") as f:
+        json_py_dict = json.load(f)
+
+    for i in range(1, recent_episode_nr + 1):
+        json_entry = json_py_dict.get(str(i))
+        if json_entry is None:
+            print(f"Error - missing entry on {i} episode.")
+            return True
+
+    return False
+
+
 def check_file():
     if not exists("DD.json"):
         print("DD.json not found, creating a brand new file...")
         create_json()
-    elif getsize("DD.json") != 14976:
+
+    elif check_json():
         print("Corrupted DD.json found, creating a brand new file...")
         create_json()
+
     else:
         print("Intact DD.json found, proceeding...")
 
