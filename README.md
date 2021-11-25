@@ -74,4 +74,6 @@ python DDD.py
 Never have I had one, but I am imperfect human, so I am open for pull requests.
 
 ## License
-[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://choosealicense.com/licenses/gpl-3.0/)
+
+Software licensed under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/).
