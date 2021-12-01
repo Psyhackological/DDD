@@ -50,10 +50,9 @@
 Pre-built binaries are available from the [releases](https://github.com/Psyhackological/DDD/releases/) page.
 
 ##  Dependencies
-You need 3 additional modules:
+You need 2 additional modules:
 - [requests](https://pypi.org/project/requests/)
 - [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
-- [alive-progress](https://pypi.org/project/alive-progress/)
 
 They all can be installed at once by pasting this command into the terminal (at the DDD folder):
 ```terminal
@@ -74,6 +73,6 @@ python DDD.py
 Never have I had one, but I am imperfect human, so I am open for pull requests.
 
 ## License
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://choosealicense.com/licenses/gpl-3.0/)
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)](https://choosealicense.com/licenses/gpl-3.0/)
 
 Software licensed under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/).
