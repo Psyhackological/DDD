@@ -66,8 +66,8 @@ def check_json():
         json_py_dict = json.load(f)
 
     for i in range(1, recent_episode_nr + 1):
-        json_entry = json_py_dict.get(str(i))
-        if json_entry is None:
+
+        if json_py_dict.get(str(i)) is None or json_py_dict.get(str(i)).get("title") is None or json_py_dict.get(str(i)).get("link") is None:
             print(f"Error - missing entry on {i} episode.")
             return True
 
