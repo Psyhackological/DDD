@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from os.path import exists
-from alive_progress import alive_bar
 import json
 
 
@@ -27,30 +26,28 @@ def create_json():
     json_py_dict = dict()
     recent_episode_nr = get_recent_episode_nr()
 
-    with alive_bar(recent_episode_nr, title="Generating...", bar="filling", length=40, spinner="waves") as bar:
-        for i in range(1, recent_episode_nr + 1, 1):
-            url = "https://darknetdiaries.com/episode/0/"
-            url = url.replace("0", str(i))
+    for i in range(1, recent_episode_nr + 1, 1):
+        url = "https://darknetdiaries.com/episode/0/"
+        url = url.replace("0", str(i))
 
-            page = requests.get(url)
-            page_soup = BeautifulSoup(page.text, "html.parser")
+        page = requests.get(url)
+        page_soup = BeautifulSoup(page.text, "html.parser")
 
-            scripts = page_soup.findAll("script")
-            script = str(scripts[3])
-            script = script.replace("<script>", '', 1)
-            script = script.replace("window.playerConfiguration = ", '', 1)
-            script = script.replace("</script>", '', 1)
-            json_data = json.loads(script)
+        scripts = page_soup.findAll("script")
+        script = str(scripts[3])
+        script = script.replace("<script>", '', 1)
+        script = script.replace("window.playerConfiguration = ", '', 1)
+        script = script.replace("</script>", '', 1)
+        json_data = json.loads(script)
 
-            title = json_data["episode"]["title"]
-            title = title.replace(':', '')
-            bar.text(title)
+        title = json_data["episode"]["title"]
+        title = title.replace(':', '')
 
-            link = json_data["episode"]["media"]["mp3"]
+        link = json_data["episode"]["media"]["mp3"]
 
-            json_py_dict.update({str(i): {"title": title, "link": link}})
+        print('"' + str(i) + '": {"title": "' + title + '", "link": "' + link + '"}')
 
-            bar()
+        json_py_dict.update({str(i): {"title": title, "link": link}})
 
     json_dumped_str = json.dumps(json_py_dict, indent=4)
 
