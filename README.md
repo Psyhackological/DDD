@@ -8,7 +8,8 @@
     <strong style="font-size: 20px;">D</strong>iaries
     <strong style="font-size: 20px;">D</strong>ownloader
     <br>
-    The CLI Python module for bulk downloading the <a href="https://darknetdiaries.com/" target="_blank">Darknet Diaries</a> podcast to a hard disc.
+    The CLI Python module for bulk downloading the <a href="https://darknetdiaries.com/" target="_blank">Darknet Diaries</a> podcast to a hard memory. <br>
+    Hate being online all the time? This is the way.
 </p>
 
 <p align="center">
@@ -33,8 +34,8 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#features">Features</a></li>
+    <li><a href="#binaries">Binaries</a></li>
     <li><a href="#installation">Installation</a></li>
-    <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -46,11 +47,27 @@
 - Fast and easy to use.
 - JSON file can be used in other programming languages.
 
-## Installation
-Pre-built binaries are available from the [releases](https://github.com/Psyhackological/DDD/releases/) page.
+## Binaries
+Pre-built binaries are available from the [releases](https://github.com/Psyhackological/DDD/releases/) page (Windows only).
 
-##  Dependencies
-You need 2 additional modules:
+## Installation
+### Git way
+Open your terminal and paste this line:
+```terminal
+git clone https://github.com/Psyhackological/DDD && cd DDD
+```
+
+### No-git way
+Download zip archive from Code > Download ZIP.
+
+![git_zip](https://imgin.voidnet.tech/uTkmKR8.jpg "git_zip")
+
+There is also source code in [releases](https://github.com/Psyhackological/DDD/releases/) page. (tar.gz and zip archives)
+
+![release_archives](https://imgin.voidnet.tech/8to2Ilh.jpg "release_archives")
+
+###  Dependencies
+Then, you need 2 additional modules:
 - [requests](https://pypi.org/project/requests/)
 - [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
 
@@ -58,7 +75,7 @@ They all can be installed at once by pasting this command into the terminal (at 
 ```terminal
 pip install -r requirements.txt
 ```
-If the installation fails due to lack of access rights, try this:
+Or for current user only:
 ```terminal
 pip install --user -r requirements.txt
 ```
@@ -66,7 +83,7 @@ pip install --user -r requirements.txt
 ## Usage
 Paste this command into the terminal (at the DDD folder):
 ```terminal
-python DDD.py
+python3 DDD.py
 ```
 
 ## Contributing
