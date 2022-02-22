@@ -13,18 +13,20 @@ def get_recent_episode_nr():
 
     nr_end = last_episode_title.find(':')
     recent_episode_str = last_episode_title[3:nr_end]
-    recent_episode_nr = int(recent_episode_str)
 
-    return recent_episode_nr
+    return int(recent_episode_str)
+
 
 #  json_data - reading json data from extracted string (script)
 #  json_py_dict - empty python dictionary ready to be updated in each iteration
 #  json_dump_str - dumped json string from python dictionary (json_py_dict) waiting to be written to a file
 
 
+recent_episode_nr = get_recent_episode_nr()
+
+
 def create_json():
     json_py_dict = dict()
-    recent_episode_nr = get_recent_episode_nr()
 
     for i in range(1, recent_episode_nr + 1, 1):
         url = "https://darknetdiaries.com/episode/0/"
@@ -57,14 +59,13 @@ def create_json():
 
 
 def check_json():
-    recent_episode_nr = get_recent_episode_nr()
-
     with open("DD.json") as f:
         json_py_dict = json.load(f)
 
     for i in range(1, recent_episode_nr + 1):
 
-        if json_py_dict.get(str(i)) is None or json_py_dict.get(str(i)).get("title") is None or json_py_dict.get(str(i)).get("link") is None:
+        if json_py_dict.get(str(i)) is None or json_py_dict.get(str(i)).get("title") is None or json_py_dict.get(
+                str(i)).get("link") is None:
             print(f"Error - missing entry on {i} episode.")
             return True
 
