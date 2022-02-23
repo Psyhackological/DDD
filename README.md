@@ -57,7 +57,7 @@ Open your terminal and paste this line:
 git clone https://github.com/Psyhackological/DDD && cd DDD
 ```
 
-### No-git way
+### Non-git way
 Download zip archive from Code > Download ZIP.
 
 ![git_zip](https://imgin.voidnet.tech/uTkmKR8.jpg "git_zip")
@@ -81,9 +81,36 @@ pip install --user -r requirements.txt
 ```
 
 ## Usage
-Paste this command into the terminal (at the DDD folder):
+Getting help:
+```terminal
+python3 DDD.py -h, --help
+```
+
+
+Downloading all episodes:
 ```terminal
 python3 DDD.py
+```
+
+
+Downloading from to episodes:
+```terminal
+python3 DDD.py start end 
+```
+__Example:__ Downloading from 1 to 10:
+```terminal
+python3 DDD.py 1 10 
+```
+
+
+Downloading specific episodes:
+```terminal
+python3 DDD.py -c, --choices <ints> 
+```
+
+__Example:__ Downloading 3 5 8 episodes:
+```terminal
+python3 DDD.py -c 3 5 8
 ```
 
 ## Contributing
