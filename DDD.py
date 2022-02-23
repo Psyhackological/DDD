@@ -15,7 +15,9 @@ parser = argparse.ArgumentParser(prog="Darknet Diaries Downloader")
 parser.add_argument(nargs='?', default=1, type=episode_int,
                     help="Starts downloading from this episode number. (int) (default=1)", dest="start")
 parser.add_argument(nargs='?', default=DDJ.recent_episode_nr, type=episode_int,
-                    help="Ends downloading to number. (int) (default=recent_episode_number)", dest="end")
+                    help=f"Ends downloading to number. (int) (default={DDJ.recent_episode_nr})", dest="end")
+parser.add_argument('-c', "--choices", nargs='+', default=range(1, DDJ.recent_episode_nr + 1, 1), type=episode_int,
+                    help=f"Gets any int arguments and then downloads them. (list_with_ints) (default=1..{DDJ.recent_episode_nr})")
 args = parser.parse_args()
 
 
@@ -23,8 +25,9 @@ def download_podcast():
     with open("DD.json") as f:
         json_py_dict = json.load(f)
 
+    from_to = args.choices if args.choices else range(args.start, args.end + 1, 1)
     print("\nDownloading started...")
-    for i in range(args.start, args.end + 1, 1):
+    for i in from_to:
         link = json_py_dict[str(i)]["link"]
         title = json_py_dict[str(i)]["title"]
 
