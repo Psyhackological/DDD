@@ -21,8 +21,7 @@ def get_recent_episode_nr():
 #  json_py_dict - empty python dictionary ready to be updated in each iteration
 #  json_dump_str - dumped json string from python dictionary (json_py_dict) waiting to be written to a file
 
-
-recent_episode_nr = get_recent_episode_nr()
+recent_episode_nr = get_recent_episode_nr()  # TODO ConnectionError exception
 
 
 def create_json():
