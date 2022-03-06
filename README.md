@@ -1,7 +1,7 @@
 <p align="center">
-  <img width="20%" align="center" src="ddd/logo.ico" alt="DDD logo">
+  <img width="20%" align="center" src="ddd_plain.svg" alt="DDD logo">
 </p>
-<h1 align="center">D D D </h1>
+<h1 align="center">D D D</h1>
 
 <p align="center">
     <strong style="font-size: 20px;">D</strong>arknet
@@ -30,17 +30,13 @@
   </a>
 </p>
 
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#binaries">Binaries</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details>
+## Contents
+1. [Features](#features)
+2. [Binaries](#binaries)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ##  Features
 - Download desired files online and enjoy freedom to be offline.
@@ -53,7 +49,7 @@ Pre-built binaries are available from the [releases](https://github.com/Psyhacko
 ## Installation
 ### Git way
 Open your terminal and paste this line:
-```terminal
+```
 git clone https://github.com/Psyhackological/DDD && cd DDD
 ```
 
@@ -72,44 +68,44 @@ Then, you need 2 additional modules:
 - [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
 
 They all can be installed at once by pasting this command into the terminal (at the DDD folder):
-```terminal
+```
 pip install -r requirements.txt
 ```
 Or for current user only:
-```terminal
+```
 pip install --user -r requirements.txt
 ```
 
 ## Usage
 Getting help:
-```terminal
+```
 python3 DDD.py -h, --help
 ```
 
 
 Downloading all episodes:
-```terminal
+```
 python3 DDD.py
 ```
 
 
 Downloading from to episodes:
-```terminal
+```
 python3 DDD.py start end 
 ```
 __Example:__ Downloading from 1 to 10:
-```terminal
+```
 python3 DDD.py 1 10 
 ```
 
 
 Downloading specific episodes:
-```terminal
+```
 python3 DDD.py -c, --choices <ints> 
 ```
 
 __Example:__ Downloading 3 5 8 episodes:
-```terminal
+```
 python3 DDD.py -c 3 5 8
 ```
 
