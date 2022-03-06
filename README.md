@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="20%" align="center" src="ddd_plain.svg" alt="DDD logo">
+  <img width="20%" align="center" src="DDD_plain.svg" alt="DDD_logo">
 </p>
 <h1 align="center">D D D</h1>
 
