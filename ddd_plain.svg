@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="29.903353mm"
+   height="42.391792mm"
+   viewBox="0 0 29.903353 42.391792"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="331.4982"
+       y="189.85713"
+       width="76.994049"
+       height="122.76048"
+       id="rect25395" />
+    <rect
+       x="227.09506"
+       y="175.59749"
+       width="223.93953"
+       height="254.2587"
+       id="rect1881" />
+    <rect
+       x="227.09506"
+       y="175.59749"
+       width="223.93953"
+       height="254.2587"
+       id="rect1881-3" />
+    <rect
+       x="227.09506"
+       y="175.59749"
+       width="223.93953"
+       height="254.2587"
+       id="rect1881-3-7" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-66.057644,-51.301261)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text25393"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect25395);fill:#000000;fill-opacity:1;stroke:none" />
+    <g
+       id="g32097"
+       transform="translate(4.4732897)">
+      <text
+         xml:space="preserve"
+         transform="matrix(-0.26458333,0,0,0.26458333,138.12038,0.50629818)"
+         id="text1879"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="227.0957"
+           y="295.69164"
+           id="tspan32436">D</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,14.95168,0.50629818)"
+         id="text1879-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881-3);fill:#ffffff;fill-opacity:1;stroke:none"><tspan
+           x="227.0957"
+           y="295.69164"
+           id="tspan32438">D</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0,0.26458333,-0.26458333,0,145.52434,17.157026)"
+       id="text1879-6-5"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881-3-7);fill:#ff0000;fill-opacity:1;stroke:none"><tspan
+         x="227.0957"
+         y="295.69164"
+         id="tspan32440">D</tspan></text>
+  </g>
+</svg>
