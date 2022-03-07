@@ -47,30 +47,33 @@
     <g
        id="g32097"
        transform="translate(4.4732897)">
-      <text
-         xml:space="preserve"
+      <g
+         aria-label="D"
          transform="matrix(-0.26458333,0,0,0.26458333,138.12038,0.50629818)"
          id="text1879"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881);fill:#000000;fill-opacity:1;stroke:none"><tspan
-           x="227.0957"
-           y="295.69164"
-           id="tspan32436">D</tspan></text>
-      <text
-         xml:space="preserve"
+         style="font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881)">
+        <path
+           d="M 232.75975,295.69164 V 191.98096 h 31.57544 q 12.82549,0 18.68485,6.57551 5.92446,6.5104 5.98957,17.9036 0,0 0.26041,48.43737 0,15.55986 -6.11977,23.17703 -6.05467,7.61717 -19.59631,7.61717 z m 23.04682,-85.35135 v 66.40608 q 0.19531,-0.0651 0.78125,-0.0651 0.39062,0 1.43228,0.0651 1.10677,0.0651 1.75781,0.0651 6.57551,0 6.57551,-5.53384 v -51.17175 q 0,-5.66405 -1.82292,-7.74737 -1.7578,-2.14844 -6.18488,-2.14844 -0.71614,0 -2.53905,0.13021 z"
+           id="path18" />
+      </g>
+      <g
+         aria-label="D"
          transform="matrix(0.26458333,0,0,0.26458333,14.95168,0.50629818)"
          id="text1879-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881-3);fill:#ffffff;fill-opacity:1;stroke:none"><tspan
-           x="227.0957"
-           y="295.69164"
-           id="tspan32438">D</tspan></text>
+         style="font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881-3);fill:#ffffff">
+        <path
+           d="M 232.75975,295.69164 V 191.98096 h 31.57544 q 12.82549,0 18.68485,6.57551 5.92446,6.5104 5.98957,17.9036 0,0 0.26041,48.43737 0,15.55986 -6.11977,23.17703 -6.05467,7.61717 -19.59631,7.61717 z m 23.04682,-85.35135 v 66.40608 q 0.19531,-0.0651 0.78125,-0.0651 0.39062,0 1.43228,0.0651 1.10677,0.0651 1.75781,0.0651 6.57551,0 6.57551,-5.53384 v -51.17175 q 0,-5.66405 -1.82292,-7.74737 -1.7578,-2.14844 -6.18488,-2.14844 -0.71614,0 -2.53905,0.13021 z"
+           id="path39" />
+      </g>
     </g>
-    <text
-       xml:space="preserve"
+    <g
+       aria-label="D"
        transform="matrix(0,0.26458333,-0.26458333,0,145.52434,17.157026)"
        id="text1879-6-5"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881-3-7);fill:#ff0000;fill-opacity:1;stroke:none"><tspan
-         x="227.0957"
-         y="295.69164"
-         id="tspan32440">D</tspan></text>
+       style="font-size:133.333px;line-height:1.25;font-family:Anton;-inkscape-font-specification:Anton;white-space:pre;shape-inside:url(#rect1881-3-7);fill:#ff0000">
+      <path
+         d="M 232.75975,295.69164 V 191.98096 h 31.57544 q 12.82549,0 18.68485,6.57551 5.92446,6.5104 5.98957,17.9036 0,0 0.26041,48.43737 0,15.55986 -6.11977,23.17703 -6.05467,7.61717 -19.59631,7.61717 z m 23.04682,-85.35135 v 66.40608 q 0.19531,-0.0651 0.78125,-0.0651 0.39062,0 1.43228,0.0651 1.10677,0.0651 1.75781,0.0651 6.57551,0 6.57551,-5.53384 v -51.17175 q 0,-5.66405 -1.82292,-7.74737 -1.7578,-2.14844 -6.18488,-2.14844 -0.71614,0 -2.53905,0.13021 z"
+         id="path60" />
+    </g>
   </g>
 </svg>
