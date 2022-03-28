@@ -1,34 +1,16 @@
-<p align="center">
-  <img width="20%" align="center" src="DDD_plain.svg" alt="DDD_logo">
-</p>
-<h1 align="center">D D D</h1>
+<div align="center">
+    <img width="20%" src="DDD_plain.svg" alt="DDD_logo">
+    <h1>Darknet Diaries Downloader</h1>
+    <p>The CLI Python module for bulk downloading the <a href="https://darknetdiaries.com/" target="_blank">Darknet Diaries</a> podcast to a hard memory.</p>
+    <p>Hate being online all the time while listening to podcast? This is the way.</p>
 
-<p align="center">
-    <strong style="font-size: 20px;">D</strong>arknet
-    <strong style="font-size: 20px;">D</strong>iaries
-    <strong style="font-size: 20px;">D</strong>ownloader
-    <br>
-    The CLI Python module for bulk downloading the <a href="https://darknetdiaries.com/" target="_blank">Darknet Diaries</a> podcast to a hard memory. <br>
-    Hate being online all the time? This is the way.
-</p>
+[![Releases](https://img.shields.io/github/v/release/Psyhackological/DDD?color=000000&style=flat-square)](https://github.com/Psyhackological/DDD/releases)
+[![GPLv3](https://img.shields.io/badge/License-GPL%20v3-FFFFFF.svg)](https://choosealicense.com/licenses/gpl-3.0/)
+[![Python3.7+](https://img.shields.io/badge/python-3.7+-blue.svg?color=FF0000&style=flat-square)](https://www.python.org/downloads/release/python-379/)
+[![CodeQuality](https://img.shields.io/codefactor/grade/github/Psyhackological/DDD/main?color=FFFFFF)](https://www.codefactor.io/repository/github/psyhackological/ddd)
+[![Downloads](https://img.shields.io/github/downloads/psyhackological/ddd/total?color=000000&style=flat-square)](https://github.com/Psyhackological/DDD/releases)
 
-<p align="center">
-  <a style="text-decoration:none" href="https://github.com/Psyhackological/DDD/releases">
-    <img src="https://img.shields.io/github/v/release/Psyhackological/DDD?color=000000&style=flat-square" alt="Releases">
-  </a>
-  <a style="text-decoration:none" href="https://choosealicense.com/licenses/gpl-3.0/">
-      <img src="https://img.shields.io/badge/License-GPL%20v3-FFFFFF.svg" alt="GPLv3">
-  </a>
-  <a style="text-decoration:none" href="https://www.python.org/downloads/release/python-379/">
-    <img src="https://img.shields.io/badge/python-3.7+-blue.svg?color=FF0000&style=flat-square" alt="Python Version">
-  </a>
-  <a style="text-decoration:none" href="https://www.codefactor.io/repository/github/psyhackological/ddd">
-    <img src="https://img.shields.io/codefactor/grade/github/Psyhackological/DDD/main?color=FFFFFF" alt="CodeFactor">
-  </a>
-  <a style="text-decoration:none" href="https://github.com/Psyhackological/DDD/releases">
-    <img src="https://img.shields.io/github/downloads/psyhackological/ddd/total?color=000000&style=flat-square" alt="Downloads">
-  </a>
-</p>
+</div>
 
 ## Contents
 1. [Features](#features)
@@ -37,11 +19,13 @@
 4. [Usage](#usage)
 5. [Contributing](#contributing)
 6. [License](#license)
+7. [Copyrights](#copyrights)
 
 ##  Features
-- Download desired files online and enjoy freedom to be offline.
-- Fast and easy to use.
-- JSON file can be used in other programming languages.
+- 🎶 Downloading desired files online to enjoy freedom of being offline. 
+- ✅ Minimal and easy to use.
+- 📜 JSON file can be used your project!
+- ⌨️ Intuitive Command Line Interface!
 
 ## Binaries
 Pre-built binaries are available from the [releases](https://github.com/Psyhackological/DDD/releases/) page (Windows only).
@@ -63,7 +47,7 @@ There is also source code in [releases](https://github.com/Psyhackological/DDD/r
 ![release_archives](https://imgin.voidnet.tech/8to2Ilh.jpg "release_archives")
 
 ###  Dependencies
-Then, you need 2 additional modules:
+You need 2 additional modules:
 - [requests](https://pypi.org/project/requests/)
 - [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
 
@@ -82,12 +66,10 @@ Getting help:
 python3 DDD.py -h, --help
 ```
 
-
 Downloading all episodes:
 ```
 python3 DDD.py
 ```
-
 
 Downloading from to episodes:
 ```
@@ -97,7 +79,6 @@ __Example:__ Downloading from 1 to 10:
 ```
 python3 DDD.py 1 10 
 ```
-
 
 Downloading specific episodes:
 ```
@@ -116,3 +97,6 @@ Never have I had one, but I am imperfect human, so I am open for pull requests.
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)](https://choosealicense.com/licenses/gpl-3.0/)
 
 Software licensed under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/).
+
+## Copyrights
+WIP because I do not know how to do this.
