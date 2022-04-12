@@ -24,10 +24,14 @@ def get_recent_episode_nr():
 recent_episode_nr = get_recent_episode_nr()  # TODO ConnectionError exception
 
 
-def create_json():
-    json_py_dict = dict()
+def create_json(episode_numbers=range(1, recent_episode_nr + 1, 1)):
+    if type(episode_numbers) is list:
+        with open("DD.json") as json_file:
+            json_py_dict = json.load(json_file)
+    else:
+        json_py_dict = dict()
 
-    for i in range(1, recent_episode_nr + 1, 1):
+    for i in episode_numbers:
         url = "https://darknetdiaries.com/episode/0/"
         url = url.replace("0", str(i))
 
@@ -52,33 +56,35 @@ def create_json():
 
     json_dumped_str = json.dumps(json_py_dict, indent=4)
 
-    with open("DD.json", 'wt') as f:
-        f.write(json_dumped_str)
+    with open("DD.json", 'wt') as json_file:
+        json_file.write(json_dumped_str)
     print("\nFile exported successfully.")
 
 
 def check_json():
-    with open("DD.json") as f:
-        json_py_dict = json.load(f)
+    with open("DD.json") as json_file:
+        json_py_dict = json.load(json_file)
 
+    missing_entries = []
     for i in range(1, recent_episode_nr + 1):
 
         if json_py_dict.get(str(i)) is None or json_py_dict.get(str(i)).get("title") is None or json_py_dict.get(
                 str(i)).get("link") is None:
             print(f"Error - missing entry on {i} episode.")
-            return True
+            missing_entries.append(i)
 
-    return False
+    return missing_entries
 
 
 def check_file():
+    episode_numbers = check_json()
     if not exists("DD.json"):
         print("DD.json not found, creating a brand new file...")
         create_json()
 
-    elif check_json():
-        print("Corrupted DD.json found, creating a brand new file...")
-        create_json()
+    elif episode_numbers:
+        print("Corrupted DD.json found, appending new entries...")
+        create_json(episode_numbers)
 
     else:
         print("Intact DD.json found, proceeding...")
