@@ -13,17 +13,17 @@ def episode_int(n):
 
 parser = argparse.ArgumentParser(prog="Darknet Diaries Downloader")
 parser.add_argument(nargs='?', default=1, type=episode_int,
-                    help="Starts downloading from this episode number. (int) (default=1)", dest="start")
+                    help="starts downloading from this episode number. (int) (default=1)", dest="start")
 parser.add_argument(nargs='?', default=DDJ.recent_episode_nr, type=episode_int,
-                    help=f"Ends downloading to number. (int) (default={DDJ.recent_episode_nr})", dest="end")
+                    help=f"ends downloading to number. (int) (default={DDJ.recent_episode_nr})", dest="end")
 parser.add_argument('-c', "--choices", nargs='+', default=range(1, DDJ.recent_episode_nr + 1, 1), type=episode_int,
-                    help=f"Gets any int arguments and then downloads them. (list_with_ints) (default=1..{DDJ.recent_episode_nr})")
+                    help=f"gets any int arguments and then downloads them. (list_with_ints) (default=1..{DDJ.recent_episode_nr})")
 args = parser.parse_args()
 
 
 def download_podcast():
-    with open("DD.json") as f:
-        json_py_dict = json.load(f)
+    with open("DD.json") as json_file:
+        json_py_dict = json.load(json_file)
 
     from_to = args.choices if args.choices else range(args.start, args.end + 1, 1)
     print("\nDownloading started...")
@@ -35,8 +35,8 @@ def download_podcast():
 
         episode = requests.get(link)
 
-        with open(title + ".mp3", 'wb') as local_file:
-            local_file.write(episode.content)
+        with open(title + ".mp3", 'wb') as mp3_file:
+            mp3_file.write(episode.content)
 
 
 if __name__ == "__main__":
