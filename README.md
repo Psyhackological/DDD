@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="20%" src="DDD_plain.svg" alt="DDD_logo">
+    <img width="20%" src="img/DDD_plain.svg" alt="DDD_logo">
     <h1>Darknet Diaries Downloader</h1>
     <p>The CLI Python module for bulk downloading the <a href="https://darknetdiaries.com/" target="_blank">Darknet Diaries</a> podcast to a hard memory.</p>
     <p>Hate being online all the time while listening to podcast? This is the way.</p>
