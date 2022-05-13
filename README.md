@@ -14,21 +14,17 @@
 
 ## Contents
 1. [Features](#features)
-2. [Binaries](#binaries)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Contributing](#contributing)
-6. [License](#license)
-7. [Copyrights](#copyrights)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#contributing)
+5. [License](#license)
+6. [Copyrights](#copyrights)
 
 ##  Features
 - 🎶 Downloading desired files online to enjoy freedom of being offline. 
 - ✅ Minimal and easy to use.
 - 📜 JSON file can be used your project!
 - ⌨️ Intuitive Command Line Interface!
-
-## Binaries
-Pre-built binaries are available from the [releases](https://github.com/Psyhackological/DDD/releases/) page (Windows only).
 
 ## Installation
 ### Git way
