@@ -8,8 +8,8 @@ def get_recent_episode_nr():
     page = requests.get("https://darknetdiaries.com/")
     page_soup = BeautifulSoup(page.text, "html.parser")
 
-    sixth_a = page_soup.findAll('a')[5]
-    last_episode_title = sixth_a.text
+    post_title_h2 = page_soup.findAll('h2', {"class": "post__title"})[0]
+    last_episode_title = post_title_h2.text
 
     nr_end = last_episode_title.find(':')
     recent_episode_str = last_episode_title[3:nr_end]
