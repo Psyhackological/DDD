@@ -1,14 +1,15 @@
-import DDJ
-import requests
 import json
 import argparse
+import requests
+import ddj
 
 
-def episode_int(n):
-    n = int(n)
-    if n <= 0 or n > DDJ.recent_episode_nr:
+def episode_int(str_num):
+    print(str_num)
+    int_num = int(str_num)
+    if int_num <= 0 or int_num > ddj.recent_episode_nr:
         raise argparse.ArgumentTypeError("Episode number out of range!")
-    return n
+    return int_num
 
 
 parser = argparse.ArgumentParser(prog="Darknet Diaries Downloader")
@@ -21,25 +22,26 @@ parser.add_argument(
 )
 parser.add_argument(
     nargs="?",
-    default=DDJ.recent_episode_nr,
+    default=ddj.recent_episode_nr,
     type=episode_int,
-    help=f"Ends downloading to number. (int) (default={DDJ.recent_episode_nr})",
+    help=f"Ends downloading to number. (int) (default={ddj.recent_episode_nr})",
     dest="end",
 )
 parser.add_argument(
     "-c",
     "--choices",
     nargs="+",
-    default=range(1, DDJ.recent_episode_nr + 1, 1),
+    default=range(1, ddj.recent_episode_nr + 1, 1),
     type=episode_int,
-    help=f"Gets any int arguments and then downloads them. (list_with_ints) (default=1..{DDJ.recent_episode_nr})",
+    help=f"""Gets any int arguments and then downloads them. (list[int])
+    (default=1..{ddj.recent_episode_nr})""",
 )
 args = parser.parse_args()
 
 
 def download_podcast():
-    with open("DD.json") as f:
-        json_py_dict = json.load(f)
+    with open("dd.json", "rt", encoding="utf-8") as json_file:
+        json_py_dict = json.load(json_file)
 
     from_to = args.choices if args.choices else range(args.start, args.end + 1, 1)
     print("\nDownloading started...")
@@ -56,5 +58,5 @@ def download_podcast():
 
 
 if __name__ == "__main__":
-    DDJ.check_file()
+    ddj.check_file()
     download_podcast()

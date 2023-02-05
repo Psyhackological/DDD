@@ -53,13 +53,13 @@ def create_json():
 
     json_dumped_str = json.dumps(json_py_dict, indent=4)
 
-    with open("DD.json", "wt", encoding="utf-8") as json_file:
+    with open("dd.json", "wt", encoding="utf-8") as json_file:
         json_file.write(json_dumped_str)
     print("\nFile exported successfully.")
 
 
 def check_json():
-    with open("DD.json", "rt", encoding="utf-8") as json_file:
+    with open("dd.json", "rt", encoding="utf-8") as json_file:
         json_py_dict = json.load(json_file)
 
     for i in range(1, recent_episode_nr + 1):
@@ -75,16 +75,16 @@ def check_json():
 
 
 def check_file():
-    if not exists("DD.json"):
-        print("DD.json not found, creating a brand new file...")
+    if not exists("dd.json"):
+        print("dd.json not found, creating a brand new file...")
         create_json()
 
     elif check_json():
-        print("Corrupted DD.json found, creating a brand new file...")
+        print("Corrupted dd.json found, creating a brand new file...")
         create_json()
 
     else:
-        print("Intact DD.json found, proceeding...")
+        print("Intact dd.json found, proceeding...")
 
 
 if __name__ == "__main__":
