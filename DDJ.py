@@ -8,10 +8,10 @@ def get_recent_episode_nr():
     page = requests.get("https://darknetdiaries.com/")
     page_soup = BeautifulSoup(page.text, "html.parser")
 
-    post_title_h2 = page_soup.findAll('h2', {"class": "post__title"})[0]
+    post_title_h2 = page_soup.findAll("h2", {"class": "post__title"})[0]
     last_episode_title = post_title_h2.text
 
-    nr_end = last_episode_title.find(':')
+    nr_end = last_episode_title.find(":")
     recent_episode_str = last_episode_title[3:nr_end]
 
     return int(recent_episode_str)
@@ -36,13 +36,13 @@ def create_json():
 
         scripts = page_soup.findAll("script")
         script = str(scripts[3])
-        script = script.replace("<script>", '', 1)
-        script = script.replace("window.playerConfiguration = ", '', 1)
-        script = script.replace("</script>", '', 1)
+        script = script.replace("<script>", "", 1)
+        script = script.replace("window.playerConfiguration = ", "", 1)
+        script = script.replace("</script>", "", 1)
         json_data = json.loads(script)
 
         title = json_data["episode"]["title"]
-        title = title.replace(':', '')
+        title = title.replace(":", "")
 
         link = json_data["episode"]["media"]["mp3"]
 
@@ -52,7 +52,7 @@ def create_json():
 
     json_dumped_str = json.dumps(json_py_dict, indent=4)
 
-    with open("DD.json", 'wt') as f:
+    with open("DD.json", "wt") as f:
         f.write(json_dumped_str)
     print("\nFile exported successfully.")
 
@@ -62,9 +62,11 @@ def check_json():
         json_py_dict = json.load(f)
 
     for i in range(1, recent_episode_nr + 1):
-
-        if json_py_dict.get(str(i)) is None or json_py_dict.get(str(i)).get("title") is None or json_py_dict.get(
-                str(i)).get("link") is None:
+        if (
+            json_py_dict.get(str(i)) is None
+            or json_py_dict.get(str(i)).get("title") is None
+            or json_py_dict.get(str(i)).get("link") is None
+        ):
             print(f"Error - missing entry on {i} episode.")
             return True
 
