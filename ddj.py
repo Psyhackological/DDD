@@ -1,7 +1,7 @@
+import json
+from os.path import exists
 import requests
 from bs4 import BeautifulSoup
-from os.path import exists
-import json
 
 
 def get_recent_episode_nr():
@@ -17,15 +17,16 @@ def get_recent_episode_nr():
     return int(recent_episode_str)
 
 
-#  json_data - reading json data from extracted string (script)
-#  json_py_dict - empty python dictionary ready to be updated in each iteration
-#  json_dump_str - dumped json string from python dictionary (json_py_dict) waiting to be written to a file
+# json_data         reading json data from extracted string (script)
+# json_py_dict      empty python dictionary ready to be updated in each iteration
+# json_dump_str     dumped json string from python dictionary (json_py_dict)
+#                   waiting to be written to a file
 
 recent_episode_nr = get_recent_episode_nr()  # TODO ConnectionError exception
 
 
 def create_json():
-    json_py_dict = dict()
+    json_py_dict = {}
 
     for i in range(1, recent_episode_nr + 1, 1):
         url = "https://darknetdiaries.com/episode/0/"
@@ -52,14 +53,14 @@ def create_json():
 
     json_dumped_str = json.dumps(json_py_dict, indent=4)
 
-    with open("DD.json", "wt") as f:
-        f.write(json_dumped_str)
+    with open("DD.json", "wt", encoding="utf-8") as json_file:
+        json_file.write(json_dumped_str)
     print("\nFile exported successfully.")
 
 
 def check_json():
-    with open("DD.json") as f:
-        json_py_dict = json.load(f)
+    with open("DD.json", "rt", encoding="utf-8") as json_file:
+        json_py_dict = json.load(json_file)
 
     for i in range(1, recent_episode_nr + 1):
         if (
