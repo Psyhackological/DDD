@@ -1,13 +1,49 @@
-import json
 import argparse
+import os
+
 import requests
-import ddj
+
+
+def fetch_podcast_links(url):
+    response = requests.get(url)
+    if response.status_code != 200:
+        print("Failed to fetch the data.")
+        return []
+    return response.text.strip().split("\n")
+
+
+def download_podcast(episode_url, dest_folder="podcasts"):
+    filename = episode_url.split("/")[-1]
+    filepath = os.path.join(dest_folder, filename)
+
+    if not os.path.exists(dest_folder):
+        os.makedirs(dest_folder)
+
+    response = requests.get(episode_url, stream=True)
+    if response.status_code != 200:
+        print(f"Failed to download {episode_url}")
+        return
+
+    with open(filepath, "wb") as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            f.write(chunk)
+
+
+def get_recent_episode_nr():
+    url = "https://darknetdiaries.com/darknet-diaries-all-episode-links.txt"
+    response = requests.get(url)
+    if response.status_code != 200:
+        print("Failed to fetch the data.")
+        return 0
+    return len(response.text.strip().split("\n"))
+
+
+recent_episode_nr = get_recent_episode_nr()
 
 
 def episode_int(str_num):
-    print(str_num)
     int_num = int(str_num)
-    if int_num <= 0 or int_num > ddj.recent_episode_nr:
+    if int_num <= 0 or int_num > recent_episode_nr:
         raise argparse.ArgumentTypeError("Episode number out of range!")
     return int_num
 
@@ -22,41 +58,34 @@ parser.add_argument(
 )
 parser.add_argument(
     nargs="?",
-    default=ddj.recent_episode_nr,
+    default=recent_episode_nr,
     type=episode_int,
-    help=f"Ends downloading to number. (int) (default={ddj.recent_episode_nr})",
+    help=f"Ends downloading to number. (int) (default={recent_episode_nr})",
     dest="end",
 )
 parser.add_argument(
     "-c",
     "--choices",
     nargs="+",
-    default=range(1, ddj.recent_episode_nr + 1, 1),
+    default=range(1, recent_episode_nr + 1),
     type=episode_int,
-    help=f"""Gets any int arguments and then downloads them. (list[int])
-    (default=1..{ddj.recent_episode_nr})""",
+    help=f"Gets any int arguments and then downloads them. (list[int]) (default=1..{recent_episode_nr})"
 )
+
 args = parser.parse_args()
 
 
-def download_podcast():
-    with open("dd.json", "rt", encoding="utf-8") as json_file:
-        json_py_dict = json.load(json_file)
+def main():
+    url = "https://darknetdiaries.com/darknet-diaries-all-episode-links.txt"
+    episodes = fetch_podcast_links(url)
+    from_to = args.choices if args.choices else range(args.start, args.end + 1)
 
-    from_to = args.choices if args.choices else range(args.start, args.end + 1, 1)
     print("\nDownloading started...")
     for i in from_to:
-        link = json_py_dict[str(i)]["link"]
-        title = json_py_dict[str(i)]["title"]
-
-        print(title + ": " + link)
-
-        episode = requests.get(link)
-
-        with open(title + ".mp3", "wb") as local_file:
-            local_file.write(episode.content)
+        episode_url = episodes[i-1]
+        print(f"Downloading {i}. {episode_url}")
+        download_podcast(episode_url)
 
 
 if __name__ == "__main__":
-    ddj.check_file()
-    download_podcast()
+    main()
