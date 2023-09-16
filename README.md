@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![Darknet Diaries Downloader](img/DDD_plain.svg)
+  ![Darknet Diaries Downloader](img/ddd_plain.svg)
 
 # Darknet Diaries Downloader
 
